@@ -28,5 +28,10 @@ export interface PaymentInput {
 }
 
 export interface ProcessPaymentUseCaseInterface {
-  execute(input: PaymentInput): Promise<void>
+  execute(input: ProcessPaymentUseCaseInterface.Input): Promise<ProcessPaymentUseCaseInterface.OutPut>
+}
+
+export namespace ProcessPaymentUseCaseInterface {
+  export type Input = PaymentInput
+  export type OutPut = { payment_id: string, email: string, status: string }
 }

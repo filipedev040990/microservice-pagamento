@@ -35,7 +35,9 @@ describe('ProcessPaymentUseCase', () => {
         value: 1200
       }
     }
+    paymentGateway.process.mockResolvedValue({ status: 'approved' })
   })
+
   test('should call PaymentGateway.process once and with correct values', async () => {
     await sut.execute(fakePayment)
 
@@ -49,6 +51,16 @@ describe('ProcessPaymentUseCase', () => {
         installments: fakePayment.payment.installments,
         value: fakePayment.payment.value
       }
+    })
+  })
+
+  test('should return PaymentGateway response correctly', async () => {
+    const response = await sut.execute(fakePayment)
+
+    expect(response).toEqual({
+      payment_id: 'be52a0d7-61e5-4d77-80b5-215b2bd26f3e',
+      email: 'filipe.siqueira@hotmail.com.br',
+      status: 'approved'
     })
   })
 })
