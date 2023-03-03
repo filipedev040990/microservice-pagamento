@@ -63,4 +63,14 @@ describe('ProcessPaymentUseCase', () => {
       status: 'approved'
     })
   })
+
+  test('should rethrow if PaymentGateway throws', async () => {
+    paymentGateway.process.mockImplementationOnce(() => {
+      throw new Error('external_error')
+    })
+
+    const promise = sut.execute(fakePayment)
+
+    await expect(promise).rejects.toThrowError()
+  })
 })

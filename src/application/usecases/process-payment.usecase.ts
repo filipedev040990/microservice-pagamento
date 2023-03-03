@@ -9,8 +9,10 @@ export interface ProcessPaymentInput {
 
 export class ProcessPaymentUseCase implements ProcessPaymentUseCaseInterface {
   constructor (private readonly paymentGateway: PaymentGateway) { }
+
   async execute (input: PaymentInput): Promise<ProcessPaymentUseCaseInterface.OutPut> {
     const payload = this.makePayload(input)
+
     const { status } = await this.paymentGateway.process(payload)
 
     return {
