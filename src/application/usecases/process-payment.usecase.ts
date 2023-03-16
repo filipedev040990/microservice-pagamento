@@ -1,5 +1,5 @@
-import { Card, PaymentInput, ProcessPaymentUseCaseInterface } from '@/application/interfaces/process-payment-usecase.interface'
-import { PaymentGatewayInterface } from '@/application/interfaces/payment-gateway.interface'
+import { Card, PaymentInput, ProcessPaymentUseCaseInterface } from '@/application/contracts/process-payment-usecase.interface'
+import { PaymentGatewayInterface } from '@/application/contracts/payment-gateway.interface'
 
 export interface ProcessPaymentInput {
   client: { document: string }

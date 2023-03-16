@@ -1,5 +1,5 @@
 module.exports = {
-  roots: ['<rootDir>/tests'],
+  roots: ['<rootDir>/src'],
   collectCoverageFrom: [
     '<rootDir>/src/**/*.ts'
   ],
@@ -9,7 +9,7 @@ module.exports = {
     '.+\\.ts$': 'ts-jest'
   },
   moduleNameMapper: {
-    '@/tests/(.*)': '<rootDir>/tests/$1',
+    '@/src/(.*)': '<rootDir>/src/$1',
     '@/(.*)': '<rootDir>/src/$1'
   }
 }

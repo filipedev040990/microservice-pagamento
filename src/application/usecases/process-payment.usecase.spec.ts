@@ -1,7 +1,7 @@
 import { mock, MockProxy } from 'jest-mock-extended'
-import { PaymentInput, ProcessPaymentUseCaseInterface } from '@/application/interfaces/process-payment-usecase.interface'
-import { ProcessPaymentUseCase } from '@/application/usecases'
-import { PaymentGatewayInterface } from '../interfaces/payment-gateway.interface'
+import { PaymentInput, ProcessPaymentUseCaseInterface } from '@/application/contracts/process-payment-usecase.interface'
+import { ProcessPaymentUseCase } from '@/application/usecases/process-payment.usecase'
+import { PaymentGatewayInterface } from '../contracts/payment-gateway.interface'
 
 let fakePayment: PaymentInput
 let paymentGateway: MockProxy<PaymentGatewayInterface>

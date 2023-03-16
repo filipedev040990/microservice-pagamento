@@ -1,5 +1,5 @@
-import { ProcessPaymentUseCaseInterface } from '@/application/interfaces/process-payment-usecase.interface'
-import { ProcessPaymentUseCase } from '@/application/usecases'
+import { ProcessPaymentUseCaseInterface } from '@/application/contracts/process-payment-usecase.interface'
+import { ProcessPaymentUseCase } from '@/application/usecases/process-payment.usecase'
 import { RabbitmqAdapter } from '@/infra/adapters/rabbitmq.adapter'
 import config from '@/infra/config'
 import { PaymentGateway } from '@/infra/gateways/payment.gateway'

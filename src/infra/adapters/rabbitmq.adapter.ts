@@ -1,5 +1,5 @@
 import { Connection, Channel, connect } from 'amqplib'
-import { QueueInterface } from '@/application/interfaces/queue.interface'
+import { QueueInterface } from '@/application/contracts/queue.interface'
 
 export class RabbitmqAdapter implements QueueInterface {
   private connection: Connection

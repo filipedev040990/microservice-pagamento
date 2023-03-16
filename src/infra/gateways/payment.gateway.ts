@@ -1,6 +1,6 @@
-import { PaymentGatewayInterface } from '@/application/interfaces/payment-gateway.interface'
-import { ProcessPaymentInput } from '@/application/usecases'
-import { sleep } from '@/shared/helpers/sleep'
+import { PaymentGatewayInterface } from '@/application/contracts/payment-gateway.interface'
+import { ProcessPaymentInput } from '@/application/usecases/process-payment.usecase'
+import { sleep } from '@/application/shared/helpers/sleep'
 
 export class PaymentGateway implements PaymentGatewayInterface {
   async process (input: ProcessPaymentInput): Promise<PaymentGatewayInterface.OutPut> {
