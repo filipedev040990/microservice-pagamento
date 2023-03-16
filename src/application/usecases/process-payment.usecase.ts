@@ -1,5 +1,5 @@
 import { Card, PaymentInput, ProcessPaymentUseCaseInterface } from '@/application/interfaces/process-payment-usecase.interface'
-import { PaymentGateway } from '@/application/interfaces/payment-gateway.interface'
+import { PaymentGatewayInterface } from '@/application/interfaces/payment-gateway.interface'
 
 export interface ProcessPaymentInput {
   client: { document: string }
@@ -8,7 +8,7 @@ export interface ProcessPaymentInput {
 }
 
 export class ProcessPaymentUseCase implements ProcessPaymentUseCaseInterface {
-  constructor (private readonly paymentGateway: PaymentGateway) { }
+  constructor (private readonly paymentGateway: PaymentGatewayInterface) { }
 
   async execute (input: PaymentInput): Promise<ProcessPaymentUseCaseInterface.OutPut> {
     const payload = this.makePayload(input)

@@ -1,10 +1,10 @@
 import { ProcessPaymentInput } from '@/application/usecases/process-payment.usecase'
 
-export interface PaymentGateway {
-  process(input: PaymentGateway.Input): Promise<PaymentGateway.OutPut>
+export interface PaymentGatewayInterface {
+  process(input: PaymentGatewayInterface.Input): Promise<PaymentGatewayInterface.OutPut>
 }
 
-export namespace PaymentGateway {
+export namespace PaymentGatewayInterface {
   export type Input = ProcessPaymentInput
   export type OutPut = { status: string }
 }

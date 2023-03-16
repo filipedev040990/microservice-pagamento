@@ -12,11 +12,11 @@ export class RabbitmqAdapter implements QueueInterface {
     this.channel = await this.connection.createChannel()
   }
 
-  async consume (queue: string, callback: (message: string) => void): Promise<any> {
+  async consume (queue: string, callback: (message: string) => Promise<void>): Promise<void> {
     await this.channel.assertQueue(queue, { durable: true })
     await this.channel.consume(queue, async (message: any) => {
       if (message) {
-        callback(message)
+        await callback(message)
         this.channel.ack(message)
       }
     })
