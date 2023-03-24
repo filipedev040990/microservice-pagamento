@@ -16,7 +16,7 @@ export class ProcessPaymentUseCase implements ProcessPaymentUseCaseInterface {
     const { status } = await this.paymentGateway.process(payload)
 
     return {
-      email: input.client.email,
+      external_code: input.client.external_code,
       payment_id: input.payment.id,
       status
     }

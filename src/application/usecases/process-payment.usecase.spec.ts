@@ -16,7 +16,7 @@ describe('ProcessPaymentUseCase', () => {
     fakePayment = {
       client: {
         id: '0ea0b6f9-8045-45c8-874d-10f20c29f225',
-        email: 'filipe.siqueira@hotmail.com.br',
+        external_code: 'anyExternalCode',
         person_type: 'pf',
         document: '33271619093'
       },
@@ -59,7 +59,7 @@ describe('ProcessPaymentUseCase', () => {
 
     expect(response).toEqual({
       payment_id: 'be52a0d7-61e5-4d77-80b5-215b2bd26f3e',
-      email: 'filipe.siqueira@hotmail.com.br',
+      external_code: 'anyExternalCode',
       status: 'approved'
     })
   })

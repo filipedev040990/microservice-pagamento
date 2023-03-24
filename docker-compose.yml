@@ -12,7 +12,3 @@ services:
       - ./dist/:/app/dist/
       - ./package.json:/app/package.json
     command: bash -c "npm install --omit=dev -f && npm run start"
-
-networks:
-  default:
-    name: local

@@ -1,6 +1,6 @@
 export interface Client {
   id: string
-  email: string
+  external_code: string
   person_type: string
   document: string
 }
@@ -33,5 +33,5 @@ export interface ProcessPaymentUseCaseInterface {
 
 export namespace ProcessPaymentUseCaseInterface {
   export type Input = PaymentInput
-  export type OutPut = { payment_id: string, email: string, status: string }
+  export type OutPut = { payment_id: string, external_code: string, status: string }
 }
