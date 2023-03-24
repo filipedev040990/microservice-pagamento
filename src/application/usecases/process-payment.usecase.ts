@@ -18,6 +18,23 @@ export class ProcessPaymentUseCase implements ProcessPaymentUseCaseInterface {
     return {
       external_code: input.client.external_code,
       payment_id: input.payment.id,
+      client: {
+        id: input.client.id,
+        external_code: input.client.external_code,
+        person_type: input.client.person_type,
+        document: input.client.document,
+        name: input.client.name,
+        phone: input.client.phone,
+        address: {
+          cep: input.client.address.cep,
+          street: input.client.address.street,
+          number: input.client.address.number,
+          complement: input.client.address.complement,
+          district: input.client.address.district,
+          city: input.client.address.city,
+          state: input.client.address.state
+        }
+      },
       status
     }
   }

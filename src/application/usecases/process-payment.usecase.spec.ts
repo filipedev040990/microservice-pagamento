@@ -18,7 +18,18 @@ describe('ProcessPaymentUseCase', () => {
         id: '0ea0b6f9-8045-45c8-874d-10f20c29f225',
         external_code: 'anyExternalCode',
         person_type: 'pf',
-        document: '33271619093'
+        document: '33271619093',
+        name: 'Zé das Couves',
+        phone: '32999651201',
+        address: {
+          cep: '36200000',
+          street: 'Rua Vitório Meneghin',
+          number: '167',
+          complement: 'Apto 204',
+          district: 'Centro',
+          city: 'Barbacena',
+          state: 'MG'
+        }
       },
       card: {
         number: '5201248356233412',
@@ -60,6 +71,23 @@ describe('ProcessPaymentUseCase', () => {
     expect(response).toEqual({
       payment_id: 'be52a0d7-61e5-4d77-80b5-215b2bd26f3e',
       external_code: 'anyExternalCode',
+      client: {
+        address: {
+          cep: '36200000',
+          city: 'Barbacena',
+          complement: 'Apto 204',
+          district: 'Centro',
+          number: '167',
+          state: 'MG',
+          street: 'Rua Vitório Meneghin'
+        },
+        document: '33271619093',
+        external_code: 'anyExternalCode',
+        id: '0ea0b6f9-8045-45c8-874d-10f20c29f225',
+        name: 'Zé das Couves',
+        person_type: 'pf',
+        phone: '32999651201'
+      },
       status: 'approved'
     })
   })
