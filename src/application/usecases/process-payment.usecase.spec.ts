@@ -21,6 +21,7 @@ describe('ProcessPaymentUseCase', () => {
         document: '33271619093',
         name: 'Zé das Couves',
         phone: '32999651201',
+        email: 'anyEmail',
         address: {
           cep: '36200000',
           street: 'Rua Vitório Meneghin',
@@ -86,7 +87,8 @@ describe('ProcessPaymentUseCase', () => {
         id: '0ea0b6f9-8045-45c8-874d-10f20c29f225',
         name: 'Zé das Couves',
         person_type: 'pf',
-        phone: '32999651201'
+        phone: '32999651201',
+        email: 'anyEmail'
       },
       status: 'approved'
     })

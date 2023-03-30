@@ -6,6 +6,7 @@ export interface Client {
   name: string
   phone: string
   address: Address
+  email: string
 }
 
 export interface Card {

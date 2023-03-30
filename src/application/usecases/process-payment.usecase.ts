@@ -25,6 +25,7 @@ export class ProcessPaymentUseCase implements ProcessPaymentUseCaseInterface {
         document: input.client.document,
         name: input.client.name,
         phone: input.client.phone,
+        email: input.client.email,
         address: {
           cep: input.client.address.cep,
           street: input.client.address.street,
